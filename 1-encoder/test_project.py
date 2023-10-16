@@ -10,7 +10,7 @@ tokenizer = RobertaTokenizerFast.from_pretrained("microsoft/codebert-base")
 # trained_model = RobertaForSequenceClassification.from_pretrained("trained/trained_model-Argo-Hive-re")
 #=====================================
 
-trained_model = RobertaForSequenceClassification.from_pretrained("/work/miki-yo/trainedNew/trained_model-Merge--9--stop_wordAll")
+trained_model = RobertaForSequenceClassification.from_pretrained("/work/miki-yo/trainedNew/trained_model-Merge--9--stop_wordSmall")
 
 # コメントを用意します
 

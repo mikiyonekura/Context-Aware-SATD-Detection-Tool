@@ -22,9 +22,10 @@ def train():
     model = RobertaForSequenceClassification.from_pretrained(model_name)
 
     def prepare_data(data):
-        texts = [f"{x['comment']} {x['code']}" for x in data]
+        # テキストとコードの間にセパレータを追加
+        combined_texts = [x['comment'] + " </s> " + x['code'] for x in data]
+        encodings = tokenizer(combined_texts, truncation=True, padding=True, max_length=512, return_tensors='pt')
         labels = [x['label'] for x in data]
-        encodings = tokenizer(texts, truncation=True, padding=True)
         return encodings, labels
 
     class SATDDataset(torch.utils.data.Dataset):
@@ -80,7 +81,7 @@ def train():
     )
 
     trainer.train()
-    trainer.save_model("./trainedNew/trained_model-Merge--9--2input--nonSEP")
+    trainer.save_model("./trainedNew/trained_model-Merge--9--2input--SEP")
 
 if __name__ == '__main__':
     train()
