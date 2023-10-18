@@ -7,6 +7,7 @@ import torch
 def predict_satd(data, model, tokenizer):
     true_labels = []
     predicted_labels = []
+    predicted_probs = []  # 予測された確率を保存するためのリスト
 
     for x in data:
         combined_texts = x['comment'] + " </s> " + x['code'] 
@@ -35,6 +36,19 @@ def predict_satd(data, model, tokenizer):
         # Save true and predicted labels
         true_labels.append(x["label"])
         predicted_labels.append(predicted_label)
+
+        
+        predicted_probs.append(satd_prob)
+        print(true_labels)
+        print(predicted_probs)
+        #txtとして保存
+        with open('true_labels.txt-2', 'w') as f:
+            for item in true_labels:
+                f.write("%s\n" % item)
+        
+        with open('predicted_probs-2.txt', 'w') as f:
+            for item in predicted_probs:
+                f.write("%s\n" % item)
 
         print("---------------------------------")
         print(f"comment&code: {combined_texts}")

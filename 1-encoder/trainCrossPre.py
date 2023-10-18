@@ -29,8 +29,8 @@ def train():
         pre_texts = []
         for text in texts:
 
-            pre_text = pre.stop_wordsAll(text)
-            # pre_text = pre.stemmerLemmatizer(text)
+            # pre_text = pre.stop_wordsAll(text)
+            pre_text = pre.stemmerLemmatizer(text)
             # pre_text = pre.standardize(text)
             print(f"====Brefore: {text}==============")
             print(f"====After: {pre_text}============")
@@ -76,7 +76,7 @@ def train():
     training_args = TrainingArguments(
         output_dir='./resultsNew',
         #一旦エポック数を下げて実験
-        num_train_epochs=1,
+        num_train_epochs=3,
         per_device_train_batch_size=4,
         per_device_eval_batch_size=16,
         warmup_steps=500,

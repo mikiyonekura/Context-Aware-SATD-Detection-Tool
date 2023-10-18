@@ -6,7 +6,7 @@ from transformers import RobertaTokenizerFast, RobertaForSequenceClassification,
 # trained_model, tokenizer = train.train()
 tokenizer = RobertaTokenizerFast.from_pretrained("microsoft/codebert-base")
 #自作のtrained_model
-trained_model = RobertaForSequenceClassification.from_pretrained("/work/miki-yo/trainedNew/trained_model-Merge--9--2input--SEP--Dummy")
+trained_model = RobertaForSequenceClassification.from_pretrained("/work/miki-yo/trainedNew/trained_model-Merge--9--2input--SEP")
 
 # コメントを用意します
 
