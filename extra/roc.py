@@ -35,14 +35,17 @@ plt.show()
 
 #PR曲線を描画
 precision, recall, thresholds = precision_recall_curve(true_labels, predicted_probs, pos_label=1)
+auc = auc(recall, precision)
+#aucも出力
 plt.figure(figsize=(6, 5))
-plt.plot(recall, precision, label='1-input')
+plt.plot(recall, precision, label='1-input (area = %.2f)'%roc_auc)
 precision2, recall2, thresholds2 = precision_recall_curve(true_labels2, predicted_probs2, pos_label=1)
-plt.plot(recall2, precision2, label='2-input')
+plt.plot(recall2, precision2, label='2-input (area = %.2f)'%roc_auc2)
 plt.legend()
 plt.xlabel('Recall')
 plt.ylabel('Precision')
 plt.savefig("pr_curveeeee.png")
+
 plt.show()
 
 
