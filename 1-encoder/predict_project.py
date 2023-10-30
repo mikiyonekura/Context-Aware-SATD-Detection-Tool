@@ -65,7 +65,7 @@ def predict_satd(data, model, tokenizer):
     plt.ylabel('True labels')
     plt.xticks([0.5,1.5], ['non-SATD', 'SATD'], rotation=0, va='center')
     plt.yticks([0.5,1.5], ['non-SATD', 'SATD'], rotation=90, va='center')
-    plt.savefig("confusion_matrix.png")
+    plt.savefig("confusion_matrix.pdf")
     # plt.show()
 
     # 2. ROC曲線のためのデータを取得
