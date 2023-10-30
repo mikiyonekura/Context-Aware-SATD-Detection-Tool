@@ -68,7 +68,7 @@ def predict_satd(data, model, tokenizer):
     plt.xticks([0.5,1.5], ['non-SATD', 'SATD'], rotation=0, va='center')
     plt.yticks([0.5,1.5], ['non-SATD', 'SATD'], rotation=90, va='center')
     # plt.show()
-    plt.savefig("sep.png")
+    plt.savefig("sep.pdf")
 
 if __name__ == "__main__":
     predict_satd(data, model, tokenizer)
