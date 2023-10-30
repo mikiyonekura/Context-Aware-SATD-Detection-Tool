@@ -29,7 +29,7 @@ plt.plot(fpr2, tpr2, label='2-input (area = %.2f)'%roc_auc2)
 plt.legend()
 plt.xlabel('False Positive Rate')
 plt.ylabel('True Positive Rate')
-plt.savefig("roc_curveeeee.png")
+plt.savefig("roc.pdf")
 plt.show()
 
 
@@ -44,7 +44,7 @@ plt.plot(recall2, precision2, label='2-input (area = %.2f)'%roc_auc2)
 plt.legend()
 plt.xlabel('Recall')
 plt.ylabel('Precision')
-plt.savefig("pr_curveeeee.png")
+plt.savefig("pr.pdf")
 
 plt.show()
 
